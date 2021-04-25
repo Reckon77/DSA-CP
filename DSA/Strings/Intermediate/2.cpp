@@ -34,21 +34,15 @@ int main() {
 	// s1.erase(x, s1.length());
 
 //Algo 2 (order maintened O(n))
-	unordered_map<char, int> freq, order;
-	REP(i, 0, s1.length()) {
-		freq[s1[i]]++;
-	}
-	int x = 0;
-	REP(i, 0, s1.length()) {
-		if (freq[s1[i]] != 0) {
-			order[s1[i]] = x;
-			x++;
-			freq[s1[i]] = 0;
+unordered_map<char, int> exists;
+	int index = 0;
+	for (int i = 0; i < s1.length(); i++) {
+		if (exists[s1[i]] == 0)
+		{
+			s1[index++] = s1[i];
+			exists[s1[i]]++;
 		}
 	}
-	for (auto itr = order.begin(); itr != order.end(); itr++) {
-		s1[itr->s] = itr->f;
-	}
-	s1.erase(x, s1.length());
+	s1.erase(index, s1.length());
 	cout << s1;
 }
