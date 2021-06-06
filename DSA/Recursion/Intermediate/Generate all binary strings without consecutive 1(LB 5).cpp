@@ -25,33 +25,25 @@ void binary(vector<string>&ans, string ip, string op) {
 	op1.push_back('0');
 	op2.push_back('1');
 	ip.erase(0, 1);
-	binary(ans, ip, op1);
-	binary(ans, ip, op2);
-
-}
-bool cons1(string s) {
-	for (int i = 1; i < s.size(); i++) {
-		if (s[i] == '1' && s[i - 1] == '1') {
-			return true;
-		}
+	if (op.size() == 0 || op[op.size() - 1] == '0') {
+		binary(ans, ip, op1);
+		binary(ans, ip, op2);
+	} else {
+		binary(ans, ip, op1);
 	}
-	return false;
+
+
 }
 int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	int n;
 	cin >> n;
-	vector<string>ans, res;
+	vector<string>ans;
 	string s1(n, '0');
 	string s2 = {""};
 	binary(ans, s1, s2);
-	REP(i, 0, ans.size()) {
-		if (!cons1(ans[i])) {
-			res.push_back(ans[i]);
-		}
-	}
-	for (auto &a : res) {
+	for (auto &a : ans) {
 		cout << a << endl;
 	}
 
