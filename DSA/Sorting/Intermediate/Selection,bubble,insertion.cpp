@@ -10,7 +10,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pi;
-typedef unordered_map<int, int> umap;
+//typedef unordered_map<int, int> umap;
 void inputarr(int arr[], int n) {REP(i, 0, n) {cin >> arr[i];}}
 void bubble(int arr[], int n) {
 	for (int i = 0; i < n - 1; i++) {
