@@ -6,15 +6,17 @@ struct node{
 };
 void postorder(node *p){
 	if(p==NULL)return;
-	cout<<p->data<<" ";
+
 	postorder(p->lchild);
 	postorder(p->rchild);
+		cout<<p->data<<" ";
 }
 void preorder(node *p){
 	if(p==NULL)return;
+		cout<<p->data<<" ";
 	preorder(p->lchild);
 	preorder(p->rchild);
-	cout<<p->data<<" ";
+
 }
 void inorder(node *p){
 	if(p==NULL)return;
