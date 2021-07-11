@@ -2,21 +2,19 @@
  vector<int> levelOrder(Node* node)
     {
       //Your code here
-      vector<int>ans;
+       vector<int>ans;
       queue<Node*>q;
       if(node){
-        ans.push_back(node->data);
       q.push(node);
       }
       while(!q.empty()){
           Node *p=q.front();
           q.pop();
+          ans.push_back(p->data);
           if(p->left){
-              ans.push_back(p->left->data);
               q.push(p->left);
           }
           if(p->right){
-              ans.push_back(p->right->data);
               q.push(p->right);
           }
       }

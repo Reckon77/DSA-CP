@@ -5,18 +5,16 @@ vector<int> reverseLevelOrder(Node *root)
      vector<int>ans;
       queue<Node*>q;
       if(root){
-        ans.push_back(root->data);
       q.push(root);
       }
       while(!q.empty()){
           Node *p=q.front();
+          ans.push_back(p->data);
           q.pop();
           if(p->right){
-              ans.push_back(p->right->data);
               q.push(p->right);
           }
           if(p->left){
-              ans.push_back(p->left->data);
               q.push(p->left);
           }
       }
