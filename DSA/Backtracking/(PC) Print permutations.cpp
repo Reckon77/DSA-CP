@@ -25,7 +25,7 @@ void permutations(int arr[], int n, int ci, int ti) {
 	for (int i = 0; i < n; i++) {
 		if (arr[i] == 0) {
 			arr[i] = ci;
-			permutations(arr, n, ci, ti);
+			permutations(arr, n, ci + 1, ti);
 			arr[i] = 0;
 		}
 
@@ -34,11 +34,9 @@ void permutations(int arr[], int n, int ci, int ti) {
 int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
-	int arr[4];
-	fill_n (arr, 4, 0);
-	for (auto a : arr) {
-		cout << a << endl;
-	}
+	int arr[3];
+	fill_n (arr, 3, 0);
+	permutations(arr, 3, 1, 2);
 
 
 }
